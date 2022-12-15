@@ -1,17 +1,24 @@
 // Dichiaro glie elementi 
 const targetElement = document.getElementById('target');
 const userNumbers = document.getElementById('user-numbers')
-let sum = document = document.getElementById('sum');
 
-let numbers;
+
+// Preparo la variabile
+let sum = 0;
+
+// Flag
+let isValid = true;
 // Genero il ciclo
-for(let i = 0 ; i < 10 ; i++ ) {
-    let numbers = prompt('Scegli un numero da sommare');
-    // stampo i numeri nella console
-    console.log(numbers);
-
+for(let i = 0 ; isValid && i < 10 ; i++ ) {
+    const number = parseInt(prompt('Scegli un numero da sommare'));
+    // validazione
+    if (isNaN(number)){
+        isValid = false;
+    }else{
     // faccio la somma
-    sum = numbers[i];
+    sum += number;
+    }
+
 }
 
-console.log('La somma è :' + sum);
+const message = isValid ? `La somma è ${sum}` : 'Valori non validi';

@@ -7,17 +7,17 @@ const button = document.getElementById('button');
 const result = document.getElementById('result');
 
 
-let validInvite = false;
-
 // aggancio event listener al bottone
 button.addEventListener('click' , function(){
     // Raccolgo il nome dall'input
-    guestName = guestFieldElement.value.trim();
-    console.log(guestName);
+    const guestName = guestFieldElement.value.trim();
+
+    let validInvite = false;
+    // ciclo per veridicare l'invito
     for (let i = 0; i < guests.length; i++) {
 
-
-        if (guestName === guests){
+        if (guestName === guests[i]){
+            validInvite = true;
         }
     }
 
